@@ -1,0 +1,6 @@
+# install these after the pip requirements
+# mim install -Ur requirements_mim.txt
+
+mmengine
+mmcv
+mmdet

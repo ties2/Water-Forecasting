@@ -1,0 +1,20 @@
+data:
+  raw_path: "data/raw/flow_data.csv"
+  freq: "H"
+  target_column: "flow"
+
+model:
+  sequence_length: 168
+  forecast_horizon: 1
+  lstm_units: [128, 64, 32]
+  use_attention: true
+  dropout: 0.2
+
+training:
+  epochs: 100
+  batch_size: 32
+  early_stop_patience: 10
+
+deployment:
+  port: 8000
+  host: "0.0.0.0"

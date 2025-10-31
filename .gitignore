@@ -1,0 +1,82 @@
+=======================================================
+Comprehensive .gitignore for water forecasting Project
+Generated based on provided directory structure.
+=======================================================
+1. PYTHON ARTIFACTS AND ENVIRONMENT
+#####################################
+
+Bytecode and cache
+*.pyc
+pycache/
+.mypy_cache/
+.pytest_cache/
+.ipynb_checkpoints/
+
+Environments
+venv/
+.venv/
+env/
+
+Packaging and Distribution
+build/
+dist/
+*.egg-info/
+.tox/
+.coverage
+
+2. DATA (Must NOT be committed due to size)
+#####################################
+
+The entire data directory, containing raw HS images,
+annotations, and all stages (raw, interim, processed).
+data/
+my files/
+
+3. MLOPS & ARTIFACT TRACKING
+#####################################
+
+MLflow/DVC/Similar Experiment Tracking
+mlruns/
+mlflow/
+
+Trained Models (Too large for Git)
+models/.pth
+models/.pt
+models/.h5
+models/.ckpt
+models/*
+
+Exception: Keep the lightweight model configuration/metadata file
+!models/model_metadata.yaml
+
+Runtime Logs, Outputs, and Reports
+logs/
+reports/figures/
+reports/metrics.json
+reports/evaluation/
+
+Ignore prediction maps saved by src/models/predict.py
+reports/predictions/
+
+4. CONFIGURATION & SECRETS (SENSITIVE)
+#####################################
+
+Crucial: Ignore connection strings, API keys, etc.
+config/secrets.yaml
+
+5. WORKFLOWS, NOTEBOOKS, and IDE/OS Files
+#####################################
+
+Generated execution artifacts (e.g., Airflow logs/temp files)
+workflows/pycache/
+
+Local Notebook Execution Outputs
+notebooks/.ipynb
+prototyping/.ipynb
+
+Operating System & IDE Files
+.DS_Store
+.idea/
+.vscode/
+*~
+
